@@ -53,10 +53,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ChooseCPU.cs" />
+    <Compile Include="Assets\Scripts\UiActive.cs" />
     <Compile Include="Assets\Scripts\PauseButtons.cs" />
     <Compile Include="Assets\Scripts\AddComponent.cs" />
     <Compile Include="Assets\Scripts\ChooseRam.cs" />
-    <Compile Include="Assets\Scripts\UiActive.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
