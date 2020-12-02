@@ -7,6 +7,10 @@ TagManager:
   - V_Cpu
   - AM4
   - V_Ram
+  - CPU
+  - RAM
+  - SATA_SSD
+  - M2_SSD
   layers:
   - Default
   - TransparentFX

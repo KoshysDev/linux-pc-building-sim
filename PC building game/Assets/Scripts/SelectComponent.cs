@@ -10,14 +10,16 @@ public class SelectComponent : MonoBehaviour
         {
             GetComponent<Outline>().OutlineWidth = 7;
 
-            if (GameObject.FindGameObjectWithTag("GameController").GetComponent<SelectedObjectInformation>().selectedObject != null)
+            var objectInform = GameObject.FindGameObjectWithTag("GameController").GetComponent<SelectedObjectInformation>();
+
+            if (objectInform.selectedObject != null)
             {
-                GameObject.FindGameObjectWithTag("GameController").GetComponent<SelectedObjectInformation>().selectedObject.GetComponent<Outline>().OutlineWidth = 0;
-                GameObject.FindGameObjectWithTag("GameController").GetComponent<SelectedObjectInformation>().selectedObject = gameObject;
+                objectInform.selectedObject.GetComponent<Outline>().OutlineWidth = 0;
+                objectInform.selectedObject = gameObject;
             }
             else
             {
-                GameObject.FindGameObjectWithTag("GameController").GetComponent<SelectedObjectInformation>().selectedObject = gameObject;
+                objectInform.selectedObject = gameObject;
             }
             
         }
