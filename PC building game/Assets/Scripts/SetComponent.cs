@@ -2,16 +2,22 @@
 
 public class SetComponent : MonoBehaviour
 {
-    private static string[] component = { "CPU", "RAM" };
+    private static string[] component = { "CPU", "RAM", "M2_SSD" };
 
     public int componentNum;
+    public bool isFree = true;
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0) && component[componentNum] == GameObject.FindGameObjectWithTag("GameController").GetComponent<SelectedObjectInformation>().selectedObject.tag)
+        var objectInform = GameObject.FindGameObjectWithTag("GameController").GetComponent<SelectedObjectInformation>();
+
+        if (Input.GetMouseButtonDown(0) && isFree && component[componentNum] == objectInform.selectedObject.tag)
         {
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<SelectedObjectInformation>().selectedObject.transform.position = transform.position;
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<SelectedObjectInformation>().selectedObject.transform.rotation = transform.rotation;
+            isFree = false;
+            //pos
+            objectInform.selectedObject.transform.position = transform.position;
+            //rot
+            objectInform.selectedObject.transform.rotation = transform.rotation;
         }
     }
 }
